@@ -216,7 +216,7 @@ Geliştirilen web tabanlı klinik arayüz ile:
 Aşağıda sistemin arayüzüne ait bir ekran görüntüsü yer almaktadır:
 
 <p align="center">
-  <img src="images/arayuz.png" width="850"/>
+  <img src="images/arayüz.png" width="850"/>
 </p>
 
 <p align="center">
