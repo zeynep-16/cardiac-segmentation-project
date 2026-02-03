@@ -131,6 +131,64 @@ ED ve ES fazlarına ait segmentasyonlar kullanılarak:
   </em>
 </p>
 
+### 2D Residual U-Net Modeli Eğitim Doğrulama Dice Eğrileri
+
+<p align="center">
+  <img src="images/dice.png" width="800"/>
+</p>
+
+<p align="center">
+  <em>
+  Şekil: Eğitim ve doğrulama süreçlerinde elde edilen Dice katsayısı eğrileri.
+  Modelin hızlı yakınsadığı ve eğitim–doğrulama eğrileri arasında belirgin
+  bir sapma olmadığı gözlemlenmektedir.
+  </em>
+</p>
+
+### 2D Residual U-Net Modeli Eğitim Doğrulama Loss Eğrileri
+
+<p align="center">
+  <img src="images/loss.png" width="800"/>
+</p>
+
+<p align="center">
+  <em>
+  Şekil: Eğitim ve doğrulama sürecinde elde edilen kayıp (loss) eğrileri.
+  Eğitim ve doğrulama kayıplarının birlikte ve kararlı biçimde azalması,
+  modelin aşırı öğrenme (overfitting) göstermediğini ortaya koymaktadır.
+  </em>
+</p>
+
+### 2D Residual U-Net Modeli Başarım Metrikleri
+
+<p align="center">
+  <img src="images/tablo.png" width="650"/>
+</p>
+
+<p align="center">
+  <em>
+  Şekil: 2D Residual U-Net modeli için test seti üzerinde elde edilen
+  sınıf bazlı segmentasyon performans sonuçları. Her bir sınıf için
+  Dice, IoU ve Hausdorff Distance metrikleri raporlanmıştır.
+  </em>
+</p>
+
+### Residual U-Net ile bir kalp MR diliminin orijinal, maske, tahmin ve örtüşme görselleri
+
+<p align="center">
+  <img src="images/res_Unet_ornek.png" width="900"/>
+</p>
+
+<p align="center">
+  <em>
+  Şekil: 2D Residual U-Net modeli kullanılarak elde edilen örnek segmentasyon sonucu.
+  Üst sırada sırasıyla orijinal MR dilimi, gerçek maske (ground truth) ve model tahmini;
+  alt sırada ise görüntü ile gerçek maske ve model tahmininin bindirilmiş (overlay)
+  görünümleri sunulmaktadır.
+  </em>
+</p>
+
+
 
 ### Segmentasyon Performansı
 - Ortalama Dice Skoru ≈ **0.92** (en iyi performans: 2D Residual U-Net)
