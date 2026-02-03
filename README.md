@@ -213,6 +213,23 @@ Geliştirilen web tabanlı klinik arayüz ile:
 - Orijinal görüntüler, maskeler ve örtüşme görselleri incelenebilir
 - EDV, ESV, EF ve kalite kontrol (QC) sonuçları görüntülenebilir
 
+Aşağıda sistemin arayüzüne ait bir ekran görüntüsü yer almaktadır:
+
+<p align="center">
+  <img src="images/arayuz.png" width="850"/>
+</p>
+
+<p align="center">
+  <em>
+  Şekil: Geliştirilen web tabanlı klinik uygulama arayüzü.
+  ED ve ES kardiyak MR hacimlerinin yüklenmesi, otomatik segmentasyon,
+  maske ve bindirme (overlay) görselleştirmeleri ile EDV, ESV ve
+  ejeksiyon fraksiyonu (EF) hesaplama sonuçları arayüz üzerinden
+  kullanıcıya sunulmaktadır.
+  </em>
+</p>
+
+
 ---
 
 ## Gelecek Çalışmalar
