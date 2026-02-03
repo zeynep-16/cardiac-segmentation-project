@@ -173,7 +173,7 @@ ED ve ES fazlarına ait segmentasyonlar kullanılarak:
   </em>
 </p>
 
-### Residual U-Net ile bir kalp MR diliminin orijinal, maske, tahmin ve örtüşme görselleri
+### 2D Residual U-Net ile bir kalp MR diliminin orijinal, maske, tahmin ve örtüşme görselleri
 
 <p align="center">
   <img src="images/res_Unet_ornek.png" width="900"/>
