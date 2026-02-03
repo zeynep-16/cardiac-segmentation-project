@@ -66,6 +66,14 @@ Kardiyak MR görüntülerinden kalp yapılarının otomatik olarak segmentasyonu
 - Gauss gürültüsü ekleme
 - Yoğunluk değişimleri ve bias field simülasyonları
 
+<p align="center">
+  <img src="images/veri_arttırma.png" width="700"/>
+</p>
+
+<p align="center">
+  <em>Şekil: Orijinal kalp MR dilimi ve veri artırma sonrası elde edilen örnek görüntü.</em>
+</p>
+
 ---
 
 ## Model Mimarileri
