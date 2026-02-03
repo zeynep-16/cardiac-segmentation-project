@@ -117,6 +117,21 @@ ED ve ES fazlarına ait segmentasyonlar kullanılarak:
 
 ## Sonuçlar
 
+### Genel Başarım Karşılaştırması
+
+<p align="center">
+  <img src="images/performans_karsilastirma_tablosu.png" width="850"/>
+</p>
+
+<p align="center">
+  <em>
+  Şekil: 2D U-Net, 2D Residual U-Net, 2D Residual Attention U-Net ve 3D U-Net
+  mimarilerinin test seti üzerindeki segmentasyon performanslarının
+  Dice, IoU ve Hausdorff Distance metrikleri açısından karşılaştırılması.
+  </em>
+</p>
+
+
 ### Segmentasyon Performansı
 - Ortalama Dice Skoru ≈ **0.92** (en iyi performans: 2D Residual U-Net)
 - Ortalama IoU: **0.804**
