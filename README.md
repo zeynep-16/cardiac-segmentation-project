@@ -120,7 +120,7 @@ ED ve ES fazlarına ait segmentasyonlar kullanılarak:
 ### Genel Başarım Karşılaştırması
 
 <p align="center">
-  <img src="images/performans_karsilastirma_tablosu.png" width="850"/>
+  <img src="images/performans_karşılaştırma_tablosu.png" width="850"/>
 </p>
 
 <p align="center">
