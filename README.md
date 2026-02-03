@@ -1,0 +1,137 @@
+# Derin Öğrenme Tabanlı 3B Medikal Görüntü Segmentasyonu
+
+Bu proje, kardiyak MR görüntülerinin otomatik segmentasyonu ve **EDV**, **ESV** ve **Ejeksiyon Fraksiyonu (EF)** gibi hacimsel kardiyak parametrelerin güvenilir biçimde hesaplanması için geliştirilmiş derin öğrenme tabanlı bir sistemi sunmaktadır.
+
+Çalışma, manuel kardiyak MR segmentasyonuna bağlı zaman kaybını, operatör bağımlılığını ve tutarsızlıkları azaltmayı hedefleyen, klinik kullanıma uygun ve otomatik bir çözüm önermektedir.
+
+---
+
+## Problem Tanımı
+
+**End-Diyastolik Hacim (EDV)**, **End-Sistolik Hacim (ESV)** ve **Ejeksiyon Fraksiyonu (EF)** gibi hacimsel kardiyak parametreler, kalp hastalıklarının değerlendirilmesinde temel klinik göstergelerdir.  
+Bu parametrelerin doğruluğu, kardiyak boşluklar ve miyokardın MR görüntülerinde doğru şekilde segmentasyonuna doğrudan bağlıdır.
+
+Mevcut klinik uygulamalarda segmentasyon çoğunlukla manuel olarak yapılmakta ve bu durum:
+- Zaman verimsizliği  
+- Operatöre bağımlılık  
+- Gözlemciler arası ve gözlemci içi tutarsızlıklar  
+
+gibi problemlere yol açmaktadır.
+
+Bu nedenle hızlı, güvenilir ve otomatik kardiyak MR segmentasyon sistemlerine ihtiyaç duyulmaktadır.
+
+---
+
+## Amaç ve Hedefler
+
+### Amaç
+Kardiyak MR görüntülerinden kalp yapılarının otomatik olarak segmentasyonunu gerçekleştirerek, hacimsel kardiyak parametrelerin derin öğrenme tabanlı yöntemlerle güvenilir biçimde hesaplanmasını sağlamak.
+
+### Hedefler
+- **Sol Ventrikül (LV)**, **Sağ Ventrikül (RV)** ve **Miyokard (MYO)** yapılarının otomatik segmentasyonu
+- **2D U-Net tabanlı** ve **3D U-Net** mimarilerinin performans karşılaştırmasının yapılması
+- Manuel segmentasyona bağlı zaman kaybı ve kullanıcı bağımlılığının azaltılması
+- Klinik kullanıma uygun, ölçeklenebilir bir yapay zekâ çözümünün geliştirilmesi
+
+---
+
+## Veri Seti
+
+- **Veri Seti:** ACDC (MICCAI 2017)
+- **Görüntü Türü:** Short-axis cine kardiyak MR
+- **Fazlar:** End-Diyastol (ED) ve End-Sistol (ES)
+- **Hasta Sayısı:** 150  
+- **Klinik Gruplar:**
+  - NOR (Normal): EF > %50
+  - MINF (Miyokard enfarktüsü): EF < %40
+  - DCM (Dilate kardiyomiyopati)
+  - HCM (Hipertrofik kardiyomiyopati)
+  - ARV (Sağ ventrikül anormallikleri)
+- **Format:** NIfTI (.nii)
+- **Etiketler:** Uzmanlar tarafından oluşturulmuş referans (ground truth) segmentasyon maskeleri (LV, RV, MYO)
+
+---
+
+## Ön İşleme ve Veri Artırma
+
+### Ön İşleme
+- Yeniden boyutlandırma ve mekânsal standartlaştırma
+- Yoğunluk normalizasyonu
+- Sınıf bazlı etiket kodlama  
+  *(Arka plan, RV, MYO, LV)*
+
+### Veri Artırma
+- Yatay çevirme ve küçük açılı döndürmeler
+- Ölçekleme ve öteleme
+- Gauss gürültüsü ekleme
+- Yoğunluk değişimleri ve bias field simülasyonları
+
+---
+
+## Model Mimarileri
+
+### Kullanılan Modeller
+- **2D U-Net**
+- **2D Residual U-Net (ResU-Net)**
+- **2D Residual Attention U-Net (ResAttU-Net)**
+- **3D U-Net**
+
+### Eğitim Detayları
+- Epoch sayısı: 50
+- Optimizasyon algoritması: AdamW
+- Kayıp fonksiyonu: Cross-Entropy + Soft Dice
+- Öğrenme oranı planlayıcısı: ReduceLROnPlateau
+- GPU destekli eğitim
+
+---
+
+## Değerlendirme Metrikleri
+
+- **Dice Katsayısı**  
+  Tahmin edilen segmentasyon ile gerçek segmentasyon arasındaki örtüşmeyi ölçer.
+- **Intersection over Union (IoU)**  
+  Bölgesel örtüşmeyi daha katı bir ölçütle değerlendirir.
+- **Hausdorff Distance (HD)**  
+  Segmentasyon sınırları arasındaki en büyük mesafeyi ölçerek sınır doğruluğunu değerlendirir.
+
+---
+
+## Kardiyak Fazlar ve Hacimsel Parametreler
+
+- **End-Diyastol (ED):** Sol ventrikülün maksimum doluluk hacmine ulaştığı faz  
+- **End-Sistol (ES):** Kasılma sonrası minimum hacme ulaşılan faz  
+
+ED ve ES fazlarına ait segmentasyonlar kullanılarak:
+- **EDV** ve **ESV** hesaplanır
+- **Ejeksiyon Fraksiyonu (EF)**, kalbin pompalama fonksiyonunu gösteren temel klinik parametre olarak türetilir
+
+---
+
+## Sonuçlar
+
+### Segmentasyon Performansı
+- Ortalama Dice Skoru ≈ **0.92** (en iyi performans: 2D Residual U-Net)
+- Ortalama IoU: **0.804**
+- Ortalama Hausdorff Distance: **3.44**
+- Tüm sınıflarda klinik açıdan kabul edilebilir örtüşme ve sınır doğruluğu elde edilmiştir
+
+### Hacimsel Parametre Hataları
+- EDV MAE: 7.31 ml
+- ESV MAE: 5.80 ml
+- EF MAE: %2.25
+
+Sonuçlar, sistemin hacimsel kardiyak parametreleri düşük hata oranlarıyla ve klinik olarak kabul edilebilir doğrulukta tahmin edebildiğini göstermektedir.
+
+---
+
+## Uygulama Arayüzü
+
+Geliştirilen web tabanlı klinik arayüz ile:
+- ED ve ES kardiyak MR hacimleri yüklenebilir
+- Otomatik segmentasyon gerçekleştirilebilir
+- Orijinal görüntüler, maskeler ve örtüşme görselleri incelenebilir
+- EDV, ESV, EF ve kalite kontrol (QC) sonuçları görüntülenebilir
+
+---
+
+
