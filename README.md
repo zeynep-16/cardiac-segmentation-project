@@ -133,7 +133,19 @@ Geliştirilen web tabanlı klinik arayüz ile:
 - EDV, ESV, EF ve kalite kontrol (QC) sonuçları görüntülenebilir
 
 ---
+
+## Gelecek Çalışmalar
+
+- ED ve ES fazlarının otomatik olarak tespit edilmesi
+- Segmentasyon sonrası manuel düzeltmelerin sisteme entegre edilmesi
+- Hasta bazlı segmentasyon ve hacimsel sonuçların saklanması
+- Farklı merkezlerden elde edilen verilerle genellenebilirliğin artırılması
+
+---
+
 ## Geliştirici
 
-Zeynep KAYA
+**Zeynep Kaya**  
+Lisans Bitirme Projesi – Derin Öğrenme Tabanlı 3B Medikal Görüntü Segmentasyonu
+
 
