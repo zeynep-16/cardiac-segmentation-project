@@ -133,5 +133,7 @@ Geliştirilen web tabanlı klinik arayüz ile:
 - EDV, ESV, EF ve kalite kontrol (QC) sonuçları görüntülenebilir
 
 ---
+## Geliştirici
 
+Zeynep KAYA
 
