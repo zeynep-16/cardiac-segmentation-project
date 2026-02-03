@@ -224,10 +224,6 @@ Aşağıda sistemin arayüzüne ait bir ekran görüntüleri yer almaktadır:
 </p>
 
 <p align="center">
-  <img src="images/kayıt.png" width="850"/>
-</p>
-
-<p align="center">
   <img src="images/giriş.png" width="850"/>
 </p>
 
