@@ -232,10 +232,6 @@ Aşağıda sistemin arayüzüne ait bir ekran görüntüleri yer almaktadır:
 </p>
 
 <p align="center">
-  <img src="images/manuel.png" width="850"/>
-</p>
-
-<p align="center">
   <img src="images/arayüz.png" width="850"/>
 </p>
 
@@ -249,6 +245,9 @@ Aşağıda sistemin arayüzüne ait bir ekran görüntüleri yer almaktadır:
   </em>
 </p>
 
+<p align="center">
+  <img src="images/manuel.png" width="850"/>
+</p>
 
 ---
 
