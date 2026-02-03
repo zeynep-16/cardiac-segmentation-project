@@ -213,7 +213,31 @@ Geliştirilen web tabanlı klinik arayüz ile:
 - Orijinal görüntüler, maskeler ve örtüşme görselleri incelenebilir
 - EDV, ESV, EF ve kalite kontrol (QC) sonuçları görüntülenebilir
 
-Aşağıda sistemin arayüzüne ait bir ekran görüntüsü yer almaktadır:
+Aşağıda sistemin arayüzüne ait bir ekran görüntüleri yer almaktadır:
+
+<p align="center">
+  <img src="images/sistem.png" width="850"/>
+</p>
+
+<p align="center">
+  <img src="images/kayıt.png" width="850"/>
+</p>
+
+<p align="center">
+  <img src="images/kayıt.png" width="850"/>
+</p>
+
+<p align="center">
+  <img src="images/giriş.png" width="850"/>
+</p>
+
+<p align="center">
+  <img src="images/ana_sayfa.png" width="850"/>
+</p>
+
+<p align="center">
+  <img src="images/manuel.png" width="850"/>
+</p>
 
 <p align="center">
   <img src="images/arayüz.png" width="850"/>
